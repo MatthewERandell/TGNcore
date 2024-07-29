@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{25B3DB8E-7330-4A2A-BBED-CBD1BF600F17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TGNCore</RootNamespace>
+    <AssemblyName>TGNCore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamoCore">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\DynamoCore.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoCoreWpf">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\DynamoCoreWpf.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoSandbox">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\DynamoSandbox.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoServices, Version=3.1.0.4724, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\DynamoCoreRuntime3.1.0\DynamoServices.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoUtilities">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\DynamoUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphLayout">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\GraphLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit">
+      <HintPath>C:\Users\Matthew\Downloads\MonocleForDynamo-master\MonocleForDynamo-master\dynamoResources\netFramework48\HelixToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Core.Wpf">
+      <HintPath>C:\Users\Matthew\Downloads\MonocleForDynamo-master\MonocleForDynamo-master\dynamoResources\net8\HelixToolkit.Core.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf">
+      <HintPath>C:\Users\Matthew\Downloads\MonocleForDynamo-master\MonocleForDynamo-master\dynamoResources\netFramework48\HelixToolkit.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf.SharpDX">
+      <HintPath>C:\Users\Matthew\Downloads\MonocleForDynamo-master\MonocleForDynamo-master\dynamoResources\netFramework48\HelixToolkit.Wpf.SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="LibG.Interface">
+      <HintPath>C:\Users\Matthew\Downloads\DynamoCoreRuntime3.1.0\LibG.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ProtoGeometry, Version=3.0.0.4655, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Downloads\DynamoCoreRuntime3.1.0\ProtoGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TGNDynamo.cs" />
+    <Compile Include="TGNCore.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
