@@ -1,0 +1,136 @@
+{
+  "$id": "TRE",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  
+    "type": "object",
+    "properties": {
+      "meta": { "$ref": "#/$defs/Meta" },
+      "rigs": { 
+        "type" : "array", 
+        "items" : {
+          "type" : "object", 
+          "properties" : {"rig" : {"$ref": "#/$defs/TGNRig"}}
+        }
+      }
+     },
+    "required": ["meta"],
+  
+    "$defs": {
+      
+      "TGNRig" : {
+        "$id" : "TGNRig",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "meta": { "$ref": "#/$defs/Meta" },
+          "focusCube": { "$ref": "#/$defs/FocusCube" },
+          "cameraPath": {"$ref": "#/$defs/CameraPath"},
+          "camera": {"$ref": "#/$defs/Camera"},
+          "canvas" : {"$ref": "#/$defs/Canvas"}
+        },
+        "required": ["meta", "focusCube", "cameraPath", "camera", "canvas"]
+      },
+
+      "Meta" : {
+        "$id" : "Meta",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Tag": { "type": "string" },
+          "Originator": { "type": "string" },
+          "Approver": { "type": "string" },
+          "Revision": { "type": "string" }
+        },
+        "required": ["Tag", "Originator", "Approver", "Revision"]
+      },
+
+      "FocusCube" : {
+        "$id" : "FocusCube",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "Plane" : {"$ref" : "#/$defs/PrincipalPlane"},
+          "Width" : {"type" : "number"},
+          "Height" : {"type" : "number"},
+          "Depth" : {"type" : "number"}
+        },
+        
+        "required": ["Plane", "Width", "Height", "Depth"]
+
+      },
+
+      "PrincipalPlane" : {
+        "$id" : "PrincipalPlane",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "Point" : {"$ref" : "#/$defs/Point3"},
+          "Axis" : {"$ref" : "#/$defs/Vector3"}
+        }
+
+      },
+
+      "Point3" : {
+        "$id" : "Point3",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "X" : {"type" : "number"},
+          "Y" : {"type" : "number"},
+          "Z" : {"type" : "number"}
+         }
+      },
+
+      "Vector3" : {
+        "$id" : "Vector3",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "rX" : {"type": "number", "minimum": -1, "maximum": 1, "exclusiveMinimum": false, "exclusiveMaximum": false},
+          "rY" : {"type": "number", "minimum": -1, "maximum": 1, "exclusiveMinimum": false, "exclusiveMaximum": false},
+          "rZ" : {"type": "number", "minimum": -1, "maximum": 1, "exclusiveMinimum": false, "exclusiveMaximum": false}
+        }
+      },
+
+      "CameraPath" : {
+        "$id" : "CameraPath",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "oPlane" : {"type": "string"},
+          "sPoint": {"type" : "object", "properties" : {"X" : {"type" : "number", "default" : -1}, "Y" : {"type" : "number", "default": 0}, "Z" : {"type" : "number", "default" : 0}}},
+          "cPoint": {"type" : "object", "properties" : {"X" : {"type" : "number", "default" : 0}, "Y" : {"type" : "number", "default": 0}, "Z" : {"type" : "number", "default" : 1}}},
+          "ePoint": {"type" : "object", "properties" : {"X" : {"type" : "number", "default" : 1}, "Y" : {"type" : "number", "default": 0}, "Z" : {"type" : "number", "default" : 0}}}
+        }
+      },
+
+      "Camera" : {
+        "$id" : "Camera",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "fPoint" : {"type": "string"},
+          "cPath" : {"type": "string"},
+          "focalLength" : {"type": "number", "default" : 30}
+        }
+      },
+
+      "Canvas" : {
+        "$id" : "Canvas",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+
+        "type" : "object",
+        "properties" : {
+          "oPlane" : {"type": "string"},
+          "scale" : {"type": "number", "default": 1}
+        }
+      }
+    }
+}
+  

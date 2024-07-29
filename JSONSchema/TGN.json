@@ -1,0 +1,82 @@
+{
+    "$schema": "./TGNSchema.json",
+    "title" : "Test TGN",
+    "meta": {
+        "Tag": "TEST_TRE_001", 
+        "Approver": "Matt", 
+        "Originator": "Matt", 
+        "Revision": "0.1"
+        },
+    "rigs": [
+        {"rig": {
+            "meta": {
+                "Tag": "TEST_TGN_001",
+                "Approver": "Matt", 
+                "Originator": "Matt", 
+                "Revision": "0.01"
+                },
+            "focusCube": {
+                "Plane": {
+                    "Point": {"X": 1, "Y": 1, "Z": 1}, "Axis": {"rX": 0, "rY": 0, "rZ": -1}
+                },
+                "Width" : 2, 
+                "Depth" : 2, 
+                "Height" : 2
+                },
+
+            "cameraPath": {
+                "oPlane": "this.focusCube.Plane", 
+                "sPoint": {"X": -1, "Y": 0, "Z": 0},
+                "cPoint": {"X": 0, "Y": 0, "Z": 1},
+                "ePoint": {"X": 1, "Y": 0, "Z": 0}
+                },
+            
+            "camera": {
+                "cPath": "this.cameraPath",
+                "fPoint": "focusCube.Plane.Point",
+                "focalLength": 30},
+
+            "canvas": {
+                "oPlane": "this.focusCube.Plane",
+                "scale": 1
+                }
+
+            }
+
+        },
+        {"rig": {
+            "meta": {
+                "Tag": "TEST_TGN_002",
+                "Approver": "Matt", 
+                "Originator": "Matt", 
+                "Revision": "0.01"
+            },
+            "focusCube": {
+                "Plane": {
+                    "Point": {"X": 0, "Y": 0, "Z": 0}, "Axis": {"rX":  0, "rY": 1, "rZ": 0}
+                }, 
+                "Width": 2, 
+                "Depth": 2, 
+                "Height": 2
+                },
+
+            "cameraPath": {
+                "oPlane": "this.focusCube.Plane", 
+                "sPoint": {"X": -1, "Y": 0, "Z": 0},
+                "cPoint": {"X": 0, "Y": 0, "Z": 1},
+                "ePoint": {"X": 1, "Y": 0, "Z": 0}
+                },
+            
+                "camera": {
+                    "cPath": "this.cameraPath",
+                    "fPoint": "focusCube.Plane.Point",
+                    "focalLength": 30},
+                
+            "canvas": {
+                "oPlane": "this.focusCube.Plane",
+                "scale": 1
+                }
+            }
+        }
+    ]
+}
