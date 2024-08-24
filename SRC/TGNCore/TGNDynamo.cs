@@ -5,9 +5,10 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Media3D;
+//using System.Windows.Media;
+//using System.Windows.Media.Media3D;
 using HelixToolkit.Wpf.SharpDX;
+
 
 using Autodesk.DesignScript.Geometry;
 using Autodesk.DesignScript.Interfaces;
@@ -21,7 +22,7 @@ using TGNCore;
 using Dynamo.Controls;
 using Dynamo.Logging;
 using System.Collections.Specialized;
-using System.Windows.Controls;
+//using System.Windows.Controls;
 
 namespace TGNDynamo
 {
